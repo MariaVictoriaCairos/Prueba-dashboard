@@ -49,10 +49,8 @@ if not check_login():
 st.sidebar.title(f"👤 {st.session_state.usuario}")
 st.sidebar.write(f"Rol: {st.session_state.rol}")
 
-st.sidebar.markdown("---")
-st.sidebar.success("📄 **Navegación:**\n\n**Para el CEO:**\n- 📑 **Documentos Ejecutivos** ← ¡Empieza aquí!\n\n**Contenido técnico:**\n- 📊 Dashboard KPIs (esta página)\n- 📈 Comparativa Técnica\n- 📖 Documentación")
-
 # Filtros dinámicos según rol
+st.sidebar.markdown("---")
 st.sidebar.header("🔍 Filtros")
 
 vertical = st.sidebar.selectbox(
