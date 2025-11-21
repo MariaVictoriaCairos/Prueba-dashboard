@@ -7,6 +7,11 @@ st.set_page_config(
     layout="wide"
 )
 
+# Verificar autenticación
+if 'logged_in' not in st.session_state or not st.session_state.logged_in:
+    st.error("⚠️ Por favor, inicia sesión desde la página principal")
+    st.stop()
+
 # Estilos CSS personalizados
 st.markdown("""
     <style>
