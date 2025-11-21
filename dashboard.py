@@ -49,6 +49,9 @@ if not check_login():
 st.sidebar.title(f"👤 {st.session_state.usuario}")
 st.sidebar.write(f"Rol: {st.session_state.rol}")
 
+st.sidebar.markdown("---")
+st.sidebar.info("📄 **Navegación:** Usa el menú lateral para acceder a:\n- 📊 Dashboard KPIs (esta página)\n- 📈 Comparativa Técnica\n- 📖 Documentación")
+
 # Filtros dinámicos según rol
 st.sidebar.header("🔍 Filtros")
 
