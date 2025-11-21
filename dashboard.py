@@ -115,6 +115,24 @@ df_filtrado = df[(df['fecha'] >= pd.Timestamp(fecha_inicio)) &
 # DASHBOARD PRINCIPAL
 # ========================================
 st.title("📊 Dashboard Call Center ASISA")
+
+# Banner llamativo para documentos ejecutivos
+col_banner1, col_banner2, col_banner3 = st.columns([2, 1, 2])
+with col_banner2:
+    st.markdown("""
+        <div style='text-align: center; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;'>
+            <a href='?page=documentos_ejecutivos' target='_self' style='text-decoration: none;'>
+                <h3 style='color: white; margin: 0; font-size: 18px;'>
+                    📑 Documentos para CEO
+                </h3>
+                <p style='color: #f0f0f0; margin: 5px 0 0 0; font-size: 13px;'>
+                    Resumen ejecutivo y presentación técnica completa
+                </p>
+            </a>
+        </div>
+    """, unsafe_allow_html=True)
+
 st.markdown(f"**Período:** {fecha_inicio} - {fecha_fin} | **Vertical:** {vertical}")
 
 # ========================================
