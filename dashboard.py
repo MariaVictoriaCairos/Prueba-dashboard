@@ -50,7 +50,7 @@ st.sidebar.title(f"👤 {st.session_state.usuario}")
 st.sidebar.write(f"Rol: {st.session_state.rol}")
 
 st.sidebar.markdown("---")
-st.sidebar.info("📄 **Navegación:** Usa el menú lateral para acceder a:\n- 📊 Dashboard KPIs (esta página)\n- 📈 Comparativa Técnica\n- 📖 Documentación")
+st.sidebar.success("📄 **Navegación:**\n\n**Para el CEO:**\n- 📑 **Documentos Ejecutivos** ← ¡Empieza aquí!\n\n**Contenido técnico:**\n- 📊 Dashboard KPIs (esta página)\n- 📈 Comparativa Técnica\n- 📖 Documentación")
 
 # Filtros dinámicos según rol
 st.sidebar.header("🔍 Filtros")
@@ -117,21 +117,34 @@ df_filtrado = df[(df['fecha'] >= pd.Timestamp(fecha_inicio)) &
 st.title("📊 Dashboard Call Center ASISA")
 
 # Banner llamativo para documentos ejecutivos
-col_banner1, col_banner2, col_banner3 = st.columns([2, 1, 2])
-with col_banner2:
-    st.markdown("""
-        <div style='text-align: center; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;'>
-            <a href='?page=documentos_ejecutivos' target='_self' style='text-decoration: none;'>
-                <h3 style='color: white; margin: 0; font-size: 18px;'>
-                    📑 Documentos para CEO
-                </h3>
-                <p style='color: #f0f0f0; margin: 5px 0 0 0; font-size: 13px;'>
-                    Resumen ejecutivo y presentación técnica completa
-                </p>
-            </a>
-        </div>
-    """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    .info-banner {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        text-align: center;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .info-banner h3 {
+        color: white;
+        margin: 0 0 8px 0;
+        font-size: 20px;
+    }
+    .info-banner p {
+        color: #f0f0f0;
+        margin: 0;
+        font-size: 14px;
+    }
+    </style>
+    <div class='info-banner'>
+        <h3>📑 ¿Eres CEO o Director?</h3>
+        <p>Accede a <strong>"📑 Documentos Ejecutivos"</strong> en el menú lateral izquierdo para descargar:</p>
+        <p>• Resumen Ejecutivo • Presentación Técnica • Gráficos Comparativos</p>
+    </div>
+""", unsafe_allow_html=True)
 
 st.markdown(f"**Período:** {fecha_inicio} - {fecha_fin} | **Vertical:** {vertical}")
 
